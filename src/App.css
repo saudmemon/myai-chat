@@ -809,6 +809,67 @@
   line-height: 1.6;
 }
 
+/* Markdown table styling with horizontal scroll fallback */
+.markdown-body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 14px;
+  text-align: left;
+  display: block;
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+}
+
+.markdown-body th {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  font-weight: 600;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.markdown-body td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-secondary);
+}
+
+.markdown-body tr:last-child td {
+  border-bottom: none;
+}
+
+.markdown-body tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.02);
+}
+
+:root.light .markdown-body tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+/* Markdown image styling */
+.markdown-body img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin: 12px 0;
+  border: 1px solid var(--border-color);
+}
+
+/* Markdown link styling */
+.markdown-body a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.markdown-body a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
 /* Inline code tags */
 .inline-code {
   font-family: var(--font-mono);
@@ -1055,6 +1116,7 @@
     width: 280px;
     padding: 12px;
     transform: translateX(0);
+    visibility: visible;
   }
 
   .sidebar-closed {
@@ -1062,6 +1124,7 @@
     padding: 12px;
     transform: translateX(-100%);
     border-right: none;
+    visibility: hidden;
   }
 
   /* Dark backdrop behind sidebar */

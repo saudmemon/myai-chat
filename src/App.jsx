@@ -254,7 +254,7 @@ function App() {
 
       // ===== Choose the right model =====
       // Auto-switch to vision model if images detected, otherwise use user-selected model
-      const modelToUse = hasImageAttachment ? 'meta-llama/llama-4-scout-17b-16e-instruct' : selectedModel
+      const modelToUse = hasImageAttachment ? 'llama-3.2-11b-vision-preview' : selectedModel
 
       const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',

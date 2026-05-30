@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 
-export default function InputBox({ onSend, loading }) {
+export default function InputBox({ onSend, loading, onFocus }) {
   const [input, setInput] = useState('')
   const [isRecording, setIsRecording] = useState(false)
   const [isSpeechSupported, setIsSpeechSupported] = useState(false)
@@ -315,6 +315,7 @@ export default function InputBox({ onSend, loading }) {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
+            onFocus={onFocus}
             disabled={loading}
             style={{ paddingBottom: '20px' }}
           />

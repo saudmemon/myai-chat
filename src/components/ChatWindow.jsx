@@ -50,6 +50,11 @@ export default function ChatWindow({
     scrollToBottom('smooth')
   }, [activeMessages])
 
+  // Scroll to bottom when sidebar status changes (avoids layout shift content cutoffs)
+  useEffect(() => {
+    scrollToBottom('auto')
+  }, [sidebarOpen])
+
   // Track scrolling to show/hide scroll-down floating button
   function handleScroll(e) {
     const { scrollTop, scrollHeight, clientHeight } = e.target
@@ -251,7 +256,15 @@ export default function ChatWindow({
 
       {/* Input container wrapper to keep it centered */}
       <div className="input-box-wrapper">
-        <InputBox onSend={onSendMessage} loading={loading} />
+        <InputBox 
+          onSend={onSendMessage} 
+          loading={loading} 
+          onFocus={() => {
+            // Scroll to bottom after mobile keyboard transition finishes
+            setTimeout(() => scrollToBottom('smooth'), 150);
+            setTimeout(() => scrollToBottom('smooth'), 350);
+          }} 
+        />
         <div className="input-footer-text">
           MyAI can make mistakes. Verify important info.
         </div>
