@@ -29,7 +29,7 @@ function saveConversationsToLocalStorage(conversationsList) {
 }
 
 function App() {
-  const [sidebarOpen, setSidebarOpen] = useState(true)
+  const [sidebarOpen, setSidebarOpen] = useState(() => window.innerWidth > 768)
   const [loading, setLoading] = useState(false)
 
   // ===== THEME STATE =====
@@ -413,14 +413,21 @@ function App() {
     await fetchGroqResponse(activeConversationId, nextMessages)
   }
 
+  const closeSidebar = () => setSidebarOpen(false)
+
   return (
     <div className="app-container">
+      {/* Dark backdrop — closes sidebar when tapped on mobile */}
+      <div
+        className={`sidebar-overlay${sidebarOpen ? ' visible' : ''}`}
+        onClick={closeSidebar}
+      />
       <Sidebar
         isOpen={sidebarOpen}
         toggleSidebar={() => setSidebarOpen(!sidebarOpen)}
-        onNewChat={handleNewChat}
+        onNewChat={() => { handleNewChat(); if (window.innerWidth <= 768) closeSidebar() }}
         conversations={conversations}
-        onSelectConversation={handleSelectConversation}
+        onSelectConversation={(conv) => { handleSelectConversation(conv); if (window.innerWidth <= 768) closeSidebar() }}
         activeId={activeConversationId}
         onDeleteConversation={handleDeleteConversation}
         onRenameConversation={handleRenameConversation}
