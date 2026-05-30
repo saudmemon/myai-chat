@@ -75,6 +75,7 @@
   align-items: center;
   justify-content: center;
   transition: background-color var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .toggle-sidebar-btn:hover {
@@ -397,6 +398,7 @@
   display: flex;
   align-items: center;
   transition: background-color var(--transition-fast), color var(--transition-fast);
+  flex-shrink: 0;
 }
 
 .header-toggle-sidebar-btn:hover {
@@ -1139,12 +1141,14 @@
     z-index: 99;
     opacity: 0;
     pointer-events: none;
-    transition: opacity 0.25s ease;
+    visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
   }
 
   .sidebar-overlay.visible {
     opacity: 1;
     pointer-events: auto;
+    visibility: visible;
   }
 
   /* Chat window takes full width */
