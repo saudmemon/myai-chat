@@ -3,6 +3,7 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   background-color: var(--bg-primary);
   color: var(--text-primary);
@@ -371,6 +372,8 @@
 
 /* Chat Header */
 .chat-header {
+  position: sticky;
+  top: 0;
   height: 56px;
   min-height: 56px;
   border-bottom: 1px solid var(--border-color);
