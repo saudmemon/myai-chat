@@ -1,50 +1,45 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#0f0f1a"/>
-      <stop offset="100%" stop-color="#1a1a2e"/>
+      <stop offset="0%" stop-color="#171717"/>
+      <stop offset="100%" stop-color="#212121"/>
     </linearGradient>
     <linearGradient id="glow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#818cf8"/>
-      <stop offset="50%" stop-color="#a78bfa"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#60a5fa"/>
-      <stop offset="100%" stop-color="#818cf8"/>
+      <stop offset="0%" stop-color="#10a37f"/>
+      <stop offset="100%" stop-color="#0d8a6b"/>
     </linearGradient>
     <filter id="softglow">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feGaussianBlur stdDeviation="6" result="blur"/>
       <feMerge>
         <feMergeNode in="blur"/>
         <feMergeNode in="SourceGraphic"/>
       </feMerge>
     </filter>
   </defs>
-  
+
   <!-- Background rounded square -->
   <rect width="512" height="512" rx="108" fill="url(#bg)"/>
-  
-  <!-- Outer glow ring -->
-  <circle cx="256" cy="256" r="140" fill="none" stroke="url(#glow)" stroke-width="2" opacity="0.3"/>
-  
+
+  <!-- Outer subtle ring -->
+  <circle cx="256" cy="256" r="140" fill="none" stroke="#10a37f" stroke-width="2" opacity="0.2"/>
+
   <!-- Main 4-point sparkle -->
-  <path d="M256 100 L280 220 L400 256 L280 292 L256 412 L232 292 L112 256 L232 220 Z" 
+  <path d="M256 100 L280 220 L400 256 L280 292 L256 412 L232 292 L112 256 L232 220 Z"
         fill="url(#glow)" filter="url(#softglow)" opacity="0.95"/>
-  
+
   <!-- Inner bright core -->
-  <path d="M256 160 L270 235 L345 256 L270 277 L256 352 L242 277 L167 256 L242 235 Z" 
+  <path d="M256 160 L270 235 L345 256 L270 277 L256 352 L242 277 L167 256 L242 235 Z"
         fill="white" opacity="0.9"/>
-  
+
   <!-- Small accent sparkle top-right -->
-  <path d="M370 120 L376 142 L398 148 L376 154 L370 176 L364 154 L342 148 L364 142 Z" 
-        fill="url(#accent)" opacity="0.8"/>
-  
+  <path d="M370 120 L376 142 L398 148 L376 154 L370 176 L364 154 L342 148 L364 142 Z"
+        fill="#10a37f" opacity="0.7"/>
+
   <!-- Small accent sparkle bottom-left -->
-  <path d="M148 340 L152 355 L167 359 L152 363 L148 378 L144 363 L129 359 L144 355 Z" 
-        fill="url(#accent)" opacity="0.6"/>
-  
-  <!-- Tiny dot sparkle -->
-  <circle cx="390" cy="340" r="5" fill="#c084fc" opacity="0.5"/>
-  <circle cx="130" cy="170" r="4" fill="#818cf8" opacity="0.4"/>
+  <path d="M148 340 L152 355 L167 359 L152 363 L148 378 L144 363 L129 359 L144 355 Z"
+        fill="#10a37f" opacity="0.5"/>
+
+  <!-- Tiny dot sparkles -->
+  <circle cx="390" cy="340" r="5" fill="#10a37f" opacity="0.4"/>
+  <circle cx="130" cy="170" r="4" fill="#0d8a6b" opacity="0.35"/>
 </svg>
