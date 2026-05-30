@@ -434,6 +434,8 @@
   overflow-y: auto;
   width: 100%;
   padding-bottom: 24px;
+  display: flex;
+  flex-direction: column;
 }
 
 .chat-content-container {
@@ -441,6 +443,9 @@
   width: 100%;
   margin: 0 auto;
   padding: 0 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Empty State / Suggestions Grid */
@@ -449,7 +454,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: calc(100vh - 220px);
+  flex: 1;
   text-align: center;
   padding: 40px 0;
 }
@@ -1118,7 +1123,6 @@
   }
 
   .empty-chat-landing {
-    min-height: calc(100vh - 200px);
     padding: 20px 0;
   }
 
