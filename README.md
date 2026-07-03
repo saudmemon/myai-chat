@@ -1,4 +1,4 @@
-# MyAI Chat ✨
+# MyAI Chat 
 
 A clean, fast AI chat app I built from scratch. No templates, no boilerplate — just a straightforward conversation interface powered by Groq's lightning-fast API.
 
