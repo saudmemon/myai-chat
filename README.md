@@ -52,7 +52,7 @@ That's it. Open `http://localhost:5173` and start chatting.
 
 ## Author
 
-Built by **Saud Memon**
+Built by Saud Ahmed Memon
 
 ---
 
